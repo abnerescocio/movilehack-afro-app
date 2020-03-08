@@ -6,4 +6,6 @@ interface DisciplineRepository {
 
     suspend fun list(): List<Discipline>
 
+    suspend fun set(disciplines: List<Discipline>)
+
 }

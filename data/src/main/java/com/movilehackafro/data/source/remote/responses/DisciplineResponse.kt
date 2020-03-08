@@ -1,4 +1,4 @@
-package com.movilehackafro.data.models
+package com.movilehackafro.data.source.remote.responses
 
 import com.google.gson.annotations.SerializedName
 

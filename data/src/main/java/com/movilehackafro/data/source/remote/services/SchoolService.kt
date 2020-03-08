@@ -1,6 +1,6 @@
-package com.movilehackafro.data.services
+package com.movilehackafro.data.source.remote.services
 
-import com.movilehackafro.data.models.ContentResponse
+import com.movilehackafro.data.source.remote.responses.ContentResponse
 import retrofit2.http.Query
 
 interface SchoolService {

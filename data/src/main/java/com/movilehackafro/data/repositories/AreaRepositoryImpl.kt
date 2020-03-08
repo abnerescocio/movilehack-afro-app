@@ -1,7 +1,7 @@
 package com.movilehackafro.data.repositories
 
 import com.movilehackafro.data.mappers.toDomain
-import com.movilehackafro.data.services.CommonService
+import com.movilehackafro.data.source.remote.services.CommonService
 import com.movilehackafro.domain.models.Area
 import com.movilehackafro.domain.repositories.AreaRepository
 

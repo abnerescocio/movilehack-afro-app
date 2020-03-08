@@ -1,6 +1,6 @@
 package com.movilehackafro.data.mappers
 
-import com.movilehackafro.data.models.AreaResponse
+import com.movilehackafro.data.source.remote.responses.AreaResponse
 import com.movilehackafro.domain.models.Area
 
 fun AreaResponse.toDomain() = Area(

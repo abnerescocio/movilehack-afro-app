@@ -1,6 +1,6 @@
 package com.movilehackafro.data.mappers
 
-import com.movilehackafro.data.models.ContentResponse
+import com.movilehackafro.data.source.remote.responses.ContentResponse
 import com.movilehackafro.domain.models.Content
 
 fun ContentResponse.toDomain() = Content(

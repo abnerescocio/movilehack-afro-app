@@ -1,4 +1,4 @@
-package com.movilehackafro.app.ui.home
+package com.movilehackafro.app.ui.event.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.movilehackafro.app.R
 
-class HomeFragment : Fragment() {
+class EventListFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var eventListViewModel: EventListViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        eventListViewModel =
+                ViewModelProviders.of(this).get(EventListViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
+        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        eventListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

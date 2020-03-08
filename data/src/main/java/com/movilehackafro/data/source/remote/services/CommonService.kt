@@ -1,7 +1,7 @@
-package com.movilehackafro.data.services
+package com.movilehackafro.data.source.remote.services
 
-import com.movilehackafro.data.models.AreaResponse
-import com.movilehackafro.data.models.DisciplineResponse
+import com.movilehackafro.data.source.remote.responses.AreaResponse
+import com.movilehackafro.data.source.remote.responses.DisciplineResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
