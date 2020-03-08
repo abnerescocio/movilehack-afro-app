@@ -7,12 +7,14 @@ import com.movilehackafro.app.ui.event.list.EventListViewModel
 import com.movilehackafro.data.repositories.AreaRepositoryImpl
 import com.movilehackafro.data.repositories.ContentRepositoryImpl
 import com.movilehackafro.data.repositories.DisciplineRepositoryImpl
+import com.movilehackafro.data.repositories.EventRepositoryImpl
 import com.movilehackafro.data.source.local.AppDatabase
 import com.movilehackafro.data.source.remote.services.CommonService
 import com.movilehackafro.data.source.remote.services.SchoolService
 import com.movilehackafro.domain.repositories.AreaRepository
 import com.movilehackafro.domain.repositories.ContentRepository
 import com.movilehackafro.domain.repositories.DisciplineRepository
+import com.movilehackafro.domain.repositories.EventRepository
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -53,6 +55,7 @@ object KoinModules {
         single { AreaRepositoryImpl(get()) as AreaRepository }
         single { ContentRepositoryImpl(get()) as ContentRepository }
         single { DisciplineRepositoryImpl(get(), get()) as DisciplineRepository }
+        single { EventRepositoryImpl(get()) as EventRepository }
     }
 
     val all = viewModels + databases + services + repositories
