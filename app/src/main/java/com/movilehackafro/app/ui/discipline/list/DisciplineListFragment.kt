@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.movilehackafro.app.R
+import com.movilehackafro.domain.models.Discipline
+import kotlinx.android.synthetic.main.fragment_discipline_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DisciplineListFragment : Fragment() {
+class DisciplineListFragment : Fragment(), DisciplineListInteractionListener {
 
     private val disciplineListViewModel by viewModel<DisciplineListViewModel>()
 
@@ -30,9 +33,13 @@ class DisciplineListFragment : Fragment() {
         observeError()
     }
 
+    override fun onSelectDiscipline(discipline: Discipline) {
+        findNavController().navigate(R.id.action_nav_home_to_areaListFragment)
+    }
+
     private fun observeDisciplines() {
         disciplineListViewModel.disciplines.observe(viewLifecycleOwner, Observer {
-
+            recyclerView.adapter = DisciplineListAdapter(it, this)
         })
     }
 

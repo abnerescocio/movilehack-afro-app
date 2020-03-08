@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.movilehackafro.app.ui.discipline.list.DisciplineListFragment"
-        tools:layout="@layout/fragment_discipline_list"/>
+        tools:layout="@layout/fragment_discipline_list">
+        <action
+            android:id="@+id/action_nav_home_to_areaListFragment"
+            app:destination="@id/areaListFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -19,5 +23,11 @@
         android:id="@+id/nav_slideshow"
         android:name="com.movilehackafro.app.ui.event.list.EventListFragment"
         tools:layout="@layout/fragment_event_list" />
+
+    <fragment
+        android:id="@+id/areaListFragment"
+        android:name="com.movilehackafro.app.ui.area.list.AreaListFragment"
+        android:label="fragment_area_list"
+        tools:layout="@layout/fragment_area_list" />
 
 </navigation>

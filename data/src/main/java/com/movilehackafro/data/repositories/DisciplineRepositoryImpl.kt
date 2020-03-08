@@ -17,7 +17,13 @@ class DisciplineRepositoryImpl(
     }
 
     override suspend fun list(): List<Discipline> {
-        return commonService.getDisciplines().map { it.toDomain() }
+        //return commonService.getDisciplines().map { it.toDomain() }
+        return listOf(
+            Discipline(
+                id = 1,
+                name = "Matemática"
+            )
+        )
     }
 
 }
