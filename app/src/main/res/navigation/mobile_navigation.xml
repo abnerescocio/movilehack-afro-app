@@ -34,6 +34,12 @@
         <argument
             android:name="disicpline_id"
             app:argType="long" />
+        <action
+            android:id="@+id/action_areaListFragment_to_contentListFragment"
+            app:destination="@id/contentListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/contentListFragment"
+        android:name="com.movilehackafro.app.ui.content.list.ContentListFragment" />
 
 </navigation>

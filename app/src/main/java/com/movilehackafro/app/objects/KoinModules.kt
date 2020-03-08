@@ -4,6 +4,7 @@ import androidx.room.Room
 import com.movilehackafro.app.ui.discipline.set.DisciplineSetViewModel
 import com.movilehackafro.app.ui.discipline.list.DisciplineListViewModel
 import com.movilehackafro.app.ui.area.list.AreaListViewModel
+import com.movilehackafro.app.ui.content.list.ContentListViewModel
 import com.movilehackafro.app.ui.event.list.EventListViewModel
 import com.movilehackafro.data.repositories.AreaRepositoryImpl
 import com.movilehackafro.data.repositories.ContentRepositoryImpl
@@ -23,6 +24,7 @@ import retrofit2.Retrofit
 object KoinModules {
 
     private val viewModels = module {
+        viewModel { ContentListViewModel(get()) }
         viewModel { DisciplineListViewModel(get()) }
         viewModel { DisciplineSetViewModel(get()) }
         viewModel { AreaListViewModel(get()) }

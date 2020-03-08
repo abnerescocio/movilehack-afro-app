@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.movilehackafro.app.R
-import com.movilehackafro.domain.models.Area
 import com.movilehackafro.domain.models.SubArea
 import kotlinx.android.synthetic.main.fragment_area_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -34,7 +34,7 @@ class AreaListFragment : Fragment(), SubAreaListInteractionListener {
     }
 
     override fun onSelectSubArea(subArea: SubArea) {
-
+        findNavController().navigate(R.id.contentListFragment)
     }
 
     private fun observeAreas() {
