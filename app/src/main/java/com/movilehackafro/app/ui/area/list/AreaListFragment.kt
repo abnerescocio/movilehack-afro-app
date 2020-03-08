@@ -1,4 +1,4 @@
-package com.movilehackafro.app.ui.event.list
+package com.movilehackafro.app.ui.area.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,41 +9,41 @@ import androidx.lifecycle.Observer
 import com.movilehackafro.app.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class EventListFragment : Fragment() {
+class AreaListFragment : Fragment() {
 
-    private val eventListViewModel by viewModel<EventListViewModel>()
+    private val areaListViewModel by viewModel<AreaListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_event_list, container, false)
+        return inflater.inflate(R.layout.fragment_area_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        eventListViewModel.list(123456)
+        areaListViewModel.listByDisciplineIds(emptyList())
 
-        observeEvents()
+        observeAreas()
         observeIsListing()
         observeError()
     }
 
-    private fun observeEvents() {
-        eventListViewModel.events.observe(viewLifecycleOwner, Observer {
+    private fun observeAreas() {
+        areaListViewModel.areas.observe(viewLifecycleOwner, Observer {
 
         })
     }
 
     private fun observeIsListing() {
-        eventListViewModel.isListing.observe(viewLifecycleOwner, Observer {
+        areaListViewModel.isListing.observe(viewLifecycleOwner, Observer {
 
         })
     }
 
     private fun observeError() {
-        eventListViewModel.error.observe(viewLifecycleOwner, Observer {
+        areaListViewModel.error.observe(viewLifecycleOwner, Observer {
 
         })
     }

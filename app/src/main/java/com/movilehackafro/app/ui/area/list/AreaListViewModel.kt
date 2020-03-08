@@ -1,18 +1,18 @@
-package com.movilehackafro.app.ui.event.list
+package com.movilehackafro.app.ui.area.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.movilehackafro.domain.models.Event
-import com.movilehackafro.domain.repositories.EventRepository
+import com.movilehackafro.domain.models.Area
+import com.movilehackafro.domain.repositories.AreaRepository
 import kotlinx.coroutines.launch
 
-class EventListViewModel(
-    private val eventRepository: EventRepository
+class AreaListViewModel(
+    private val areaRepository: AreaRepository
 ) : ViewModel() {
-    private val _events = MutableLiveData<List<Event>>()
-    val events: LiveData<List<Event>> = _events
+    private val _areas = MutableLiveData<List<Area>>()
+    val areas: LiveData<List<Area>> = _areas
 
     private val _isListing = MutableLiveData<Boolean>()
     val isListing: LiveData<Boolean> = _isListing
@@ -20,11 +20,11 @@ class EventListViewModel(
     private val _error = MutableLiveData<Exception>()
     val error: LiveData<Exception> = _error
 
-    fun list(schoolId: Long) {
+    fun listByDisciplineIds(disciplineIds: List<Long>) {
         viewModelScope.launch {
             try {
                 _isListing.value = true
-                _events.value = eventRepository.list(schoolId)
+                _areas.value = areaRepository.listByDisciplineIds(disciplineIds)
             } catch (e: Exception) {
                 e.printStackTrace()
                 _error.value = e
