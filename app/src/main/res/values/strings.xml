@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovileHack AFRO</string>
+    <string name="app_name">eva</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">projeto</string>
@@ -14,4 +14,5 @@
     <string name="home_second">Home Second</string>
     <string name="events">Eventos</string>
     <string name="como_a_materia_vai_ajudar_na_area">Como a %s vai ajudar na %s?</string>
+    <string name="o_que_este_curso_faz">O que este curso faz?</string>
 </resources>

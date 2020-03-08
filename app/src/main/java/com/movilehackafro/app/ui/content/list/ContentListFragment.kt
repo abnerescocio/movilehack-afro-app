@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.movilehackafro.app.R
+import com.movilehackafro.app.ui.content.get.ContentGetActivity
 import com.movilehackafro.domain.models.Content
 import kotlinx.android.synthetic.main.fragment_content_list.*
 import org.jetbrains.anko.browse
+import org.jetbrains.anko.startActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ContentListFragment : Fragment(), ContentListInteractionListener {
@@ -31,6 +33,14 @@ class ContentListFragment : Fragment(), ContentListInteractionListener {
         observeContents()
         observeIsListing()
         observeError()
+
+        configureViews()
+    }
+
+    private fun configureViews() {
+        materialButton_content_list_go_to_content.setOnClickListener {
+            requireContext().startActivity<ContentGetActivity>()
+        }
     }
 
     override fun onContent(content: Content) {

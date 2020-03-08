@@ -33,13 +33,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/textView_content_list_description"
+            android:id="@+id/materialButton_content_list_go_to_content"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:layout_marginBottom="24dp"
-            android:text="O que este curso faz?"
+            android:text="@string/o_que_este_curso_faz"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView_content_list_name"
