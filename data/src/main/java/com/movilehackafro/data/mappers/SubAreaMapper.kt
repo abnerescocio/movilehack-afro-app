@@ -5,6 +5,7 @@ import com.movilehackafro.domain.models.SubArea
 
 fun SubAreaResponse.toDomain() = SubArea(
     id = this.id,
-    areaIds = this.areaIds,
+    areaId = this.areaIds,
+    description = this.description,
     name = this.name
 )

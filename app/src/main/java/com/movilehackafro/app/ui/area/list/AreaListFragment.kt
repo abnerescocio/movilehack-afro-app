@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.movilehackafro.app.R
+import com.movilehackafro.domain.models.Area
+import com.movilehackafro.domain.models.SubArea
+import kotlinx.android.synthetic.main.fragment_area_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AreaListFragment : Fragment() {
+class AreaListFragment : Fragment(), SubAreaListInteractionListener {
 
     private val areaListViewModel by viewModel<AreaListViewModel>()
 
@@ -30,9 +33,13 @@ class AreaListFragment : Fragment() {
         observeError()
     }
 
-    private fun observeAreas() {
-        areaListViewModel.areas.observe(viewLifecycleOwner, Observer {
+    override fun onSelectSubArea(subArea: SubArea) {
 
+    }
+
+    private fun observeAreas() {
+        areaListViewModel.areas.observe(viewLifecycleOwner, Observer { areas ->
+            recyclerView_area_list.adapter = SubAreaListAdapter(areas.flatMap { it.subAreas }, this)
         })
     }
 

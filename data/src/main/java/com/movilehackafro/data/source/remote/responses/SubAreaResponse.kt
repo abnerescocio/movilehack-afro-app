@@ -8,5 +8,7 @@ data class SubAreaResponse(
     @SerializedName("areas_id")
     val areaIds: Long,
     @SerializedName("name")
-    val name: String
+    val name: String,
+    @SerializedName("description")
+    val description: String
 )

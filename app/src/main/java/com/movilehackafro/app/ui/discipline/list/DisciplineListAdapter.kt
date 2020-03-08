@@ -12,7 +12,7 @@ class DisciplineListAdapter(
 ): RecyclerView.Adapter<DisciplineListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = DisciplineListViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_discipline_list, parent, false)
+        LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
     )
 
     override fun getItemCount() = disciplines.size
@@ -20,5 +20,6 @@ class DisciplineListAdapter(
     override fun onBindViewHolder(holder: DisciplineListViewHolder, position: Int) {
         val discipline = disciplines[position]
         holder.bind(discipline)
+        holder.itemView.setOnClickListener { listener.onSelectDiscipline(discipline) }
     }
 }
