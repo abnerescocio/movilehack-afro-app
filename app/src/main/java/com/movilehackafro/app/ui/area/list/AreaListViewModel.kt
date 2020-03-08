@@ -20,11 +20,11 @@ class AreaListViewModel(
     private val _error = MutableLiveData<Exception>()
     val error: LiveData<Exception> = _error
 
-    fun listByDisciplineIds(disciplineIds: List<Long>) {
+    fun listByDisciplineId(disciplineId: Long) {
         viewModelScope.launch {
             try {
                 _isListing.value = true
-                _areas.value = areaRepository.listByDisciplineIds(disciplineIds)
+                _areas.value = areaRepository.listByDisciplineId(disciplineId)
             } catch (e: Exception) {
                 e.printStackTrace()
                 _error.value = e

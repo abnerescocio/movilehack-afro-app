@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.movilehackafro.app.R
+import com.movilehackafro.app.ui.area.list.AreaListFragment
 import com.movilehackafro.domain.models.Discipline
 import kotlinx.android.synthetic.main.fragment_discipline_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -34,7 +35,10 @@ class DisciplineListFragment : Fragment(), DisciplineListInteractionListener {
     }
 
     override fun onSelectDiscipline(discipline: Discipline) {
-        findNavController().navigate(R.id.action_nav_home_to_areaListFragment)
+        val bundle = Bundle()
+        bundle.putLong(AreaListFragment.ARG_DISCIPLINE_ID, discipline.id)
+        bundle.putString(AreaListFragment.ARG_DISCIPLINE_NAME, discipline.name)
+        findNavController().navigate(R.id.action_nav_home_to_areaListFragment, bundle)
     }
 
     private fun observeDisciplines() {

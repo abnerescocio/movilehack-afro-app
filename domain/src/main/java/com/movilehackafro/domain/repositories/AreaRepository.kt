@@ -4,6 +4,6 @@ import com.movilehackafro.domain.models.Area
 
 interface AreaRepository {
 
-    suspend fun listByDisciplineIds(disciplineIds: List<Long>): List<Area>
+    suspend fun listByDisciplineId(disciplineId: Long): List<Area>
 
 }

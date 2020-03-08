@@ -22,6 +22,10 @@ class DisciplineRepositoryImpl(
             Discipline(
                 id = 1,
                 name = "Matemática"
+            ),
+            Discipline(
+                id = 2,
+                name = "Inglês"
             )
         )
     }
