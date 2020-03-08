@@ -7,5 +7,6 @@ data class EventResponse(
     val institutionId: Long,
     val date: Date,
     val schoolId: Long,
+    val description: String,
     val status: String
 )

@@ -9,5 +9,6 @@ fun EventResponse.toDomain() = Event(
     institutionId = this.institutionId,
     date = this.date,
     schoolId = this.schoolId,
+    description = this.description,
     status = EventStatus.valueOf(this.status)
 )

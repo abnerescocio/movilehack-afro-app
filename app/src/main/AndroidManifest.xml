@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:label="@string/notificacoes"
+            android:name=".ui.event.list.EventListActivity"/>
+        <activity
             android:name=".ui.content.get.ContentGetActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.MainActivity"
             android:label=""
